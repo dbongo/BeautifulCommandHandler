@@ -1,14 +1,11 @@
-package commandHandler;
+package commandHandler.parser;
 
 import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-public class TestReflection {
-	
-	public static Class[] getClasses(String pkgName) throws ClassNotFoundException{
+public class Helper {
+	public static void loadClasses(String pkgName) throws ClassNotFoundException{
 		ArrayList<Class> classes = new ArrayList<>();
 		
 		File directory = null;
@@ -36,18 +33,6 @@ public class TestReflection {
 		} else{
 			throw new ClassNotFoundException(pkgName + " doeesn't appear to be a valid package");
 		}
-		
-		Class classesA[] = new Class[classes.size()];
-		classes.toArray(classesA);
-		return classesA;
 	}
-	
-	public static void main(String args[]) throws ClassNotFoundException{
-		Pattern myPattern = Pattern.compile("^map (\\w+) (.*)$");
-		
-		Matcher m = myPattern.matcher("map s songyy");
-		System.out.println(m.matches());
-		System.out.println(m.group(1));
-		System.out.println(m.group(2));
-	}
+
 }

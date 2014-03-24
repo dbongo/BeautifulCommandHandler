@@ -37,7 +37,7 @@ public class MapperPutCommandLogic implements CommandLogic{
 
 	@Override
 	public void doAction(Map<String, Object> environment) {
-		Map<String,String> mapping = (Map<String, String>) environment.get(Consts.MAPPING);
+		Map<String,String> mapping = (Map<String, String>) environment.get(Consts.mapper);
 		PrintStream os = (PrintStream) environment.get(Consts.outputStream);
 		
 		if(mapping == null){
